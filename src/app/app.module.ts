@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDatabase } from "./in-memory-database";
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,8 @@ import { InMemoryDatabase } from "./in-memory-database";
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDatabase)
   ],
