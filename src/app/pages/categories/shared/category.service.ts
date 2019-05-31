@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError, flatMap } from 'rxjs/operators';
 
-import { Category } from "./category.model";
+import { Category } from './category.model';
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +41,7 @@ export class CategoryService {
   update(category: Category): Observable<Category> {
     const url = `${this.apiPath}/${category.id}`;
 
-    return this.http.put(this.apiPath, category).pipe(
+    return this.http.put(url, category).pipe(
       catchError(this.handleError),
       map(() => category)
     );
