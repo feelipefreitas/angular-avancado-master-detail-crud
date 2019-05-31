@@ -24,7 +24,7 @@ export class EntryListComponent implements OnInit {
   deleteEntry(entry: Entry) {
     const mustDelete = confirm('Deseja mesmo excluir este item?');
 
-    if(!mustDelete) return;
+    if (!mustDelete) return;
 
     this.entryService.delete(entry.id).subscribe(
       () => this.entries = this.entries.filter((el: Entry) => el !== entry)
