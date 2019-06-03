@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [],
+  declarations: [BreadCrumbComponent],
   imports: [
-    CommonModule,
+  CommonModule,
+    FormsModule,
+    BrowserModule,
     ReactiveFormsModule
   ],
   exports: [
+    //SharedModules
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    //sharedComponents
+    BreadCrumbComponent
   ]
 })
 export class SharedModule { }
