@@ -24,7 +24,7 @@ export class CategoryListComponent implements OnInit {
   deleteCategory(category: Category) {
     const mustDelete = confirm('Deseja mesmo excluir este item?');
 
-    if(!mustDelete) return;
+    if (!mustDelete) return;
 
     this.categoryService.delete(category.id).subscribe(
       () => this.categories = this.categories.filter((el: Category) => el !== category)
