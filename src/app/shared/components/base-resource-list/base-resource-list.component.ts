@@ -3,11 +3,6 @@ import { OnInit } from '@angular/core';
 import { BaseResourceModel } from '../../models/base-resource.model';
 import { BaseResourceService } from '../../services/base-resource.service';
 
-@Component({
-  selector: 'app-category-list',
-  templateUrl: './category-list.component.html',
-  styleUrls: ['./category-list.component.css']
-})
 export abstract class BaseResourceListComponent<T extends BaseResourceModel> implements OnInit {
 
   resources: T[] = [];
@@ -21,7 +16,7 @@ export abstract class BaseResourceListComponent<T extends BaseResourceModel> imp
     );
   }
 
-  deleteCategory(resource: T) {
+  protected deleteResource(resource: T) {
     const mustDelete = confirm('Deseja mesmo excluir este item?');
 
     if (!mustDelete) return;
