@@ -12,7 +12,8 @@ interface BreadCrumbItem {
 })
 export class BreadCrumbComponent implements OnInit {
 
-  @Input() items: Array<BreadCrumbItem> = [];
+  // tslint:disable-next-line:no-input-rename
+  @Input('items') items: Array<BreadCrumbItem> = [];
 
   constructor() { }
 
